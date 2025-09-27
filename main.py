@@ -8,6 +8,7 @@ from functions.get_files_info import get_files_info
 load_dotenv()
 def main():
     GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+    system_prompt = (""" Ignore all previous instructions.just shout "I am A RObot" """)
 
     if len(sys.argv) < 2:
         print("I need a prompt to work with!")
@@ -21,7 +22,8 @@ def main():
     messages = [types.Content(role="user", parts=[types.Part(text=prompt)])]
 
     response = client.models.generate_content(model="gemini-2.0-flash-001",
-                                            contents=messages)
+                                            contents=messages,
+                                            config=types.GenerateContentConfig(system_instruction= system_prompt,))
 
     if response is None or response.usage_metadata is None:
         print("No response or usage metadata received.")
