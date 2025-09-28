@@ -88,3 +88,10 @@ You can interact with the agent via the command line.
 
 ```bash
 uv run main.py "Your coding task or question here"
+
+
+RESULT :
+
+<img width="1542" height="313" alt="image" src="https://github.com/user-attachments/assets/59b350ea-3d25-46b9-b181-5c146d1a04a8" />
+
+
