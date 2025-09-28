@@ -7,7 +7,7 @@ from pkg.render import format_json_output
 
 def main():
     calculator = Calculator()
-    if len(sys.argv) <= 1:
+    if len(sys.argv) <= 0:
         print("Calculator App")
         print('Usage: python main.py "<expression>"')
         print('Example: python main.py "3 + 5"')
